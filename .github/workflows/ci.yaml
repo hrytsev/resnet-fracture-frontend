@@ -59,4 +59,4 @@ jobs:
 
       - name: Upload to Cloud Storage
         run: |
-          gsutil -m rsync -r -d dist/ gs://${{secrets.GCP_BUCKET_NAME}}
+          gcloud storage rsync -r --delete-unmatched-destination-objects dist/ gs://${{ secrets.GCP_BUCKET_NAME }}
