@@ -59,7 +59,7 @@ const useAppStore = create((set) => ({
     try {
       const prediction = await fetchFracturePrediction(state.file);
       set({ prediction, isPredicting: false });
-    } catch (error) {
+    } catch {
       set({ 
         predictionError: 'Failed to get prediction. Please try again.', 
         isPredicting: false 
@@ -73,7 +73,7 @@ const useAppStore = create((set) => ({
     try {
       const modelInfo = await fetchModelInfo();
       set({ modelInfo, isModelInfoLoading: false });
-    } catch (error) {
+    } catch {
       set({ 
         modelInfoError: 'Failed to load model info.', 
         isModelInfoLoading: false 
