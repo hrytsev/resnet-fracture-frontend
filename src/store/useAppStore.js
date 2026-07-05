@@ -5,6 +5,7 @@ const useAppStore = create((set) => ({
     // upload / file
     file: null,
     previewUrl: null,
+
     fileError: null,
 
     // prediction request lifecycle
